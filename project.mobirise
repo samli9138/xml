@@ -1,0 +1,67 @@
+{
+  "settings": {
+    "name": "Site-01-25_2253",
+    "currentPage": "index.html",
+    "theme": {
+      "name": "mobirise4",
+      "title": "Mobirise 4",
+      "styling": {
+        "primaryColor": "#149dcc",
+        "secondaryColor": "#ff3366",
+        "successColor": "#F7ED4A",
+        "infoColor": "#82786E",
+        "warningColor": "#879A9F",
+        "dangerColor": "#B1A374",
+        "mainFont": "Rubik",
+        "display1Font": "Rubik",
+        "display1Size": 4.25,
+        "display2Font": "Rubik",
+        "display2Size": 3,
+        "display5Font": "Rubik",
+        "display5Size": 1.5,
+        "display7Font": "Rubik",
+        "display7Size": 1,
+        "display4Font": "Rubik",
+        "display4Size": 1,
+        "isRoundedButtons": true,
+        "isAnimatedOnScroll": false,
+        "isScrollToTopButton": false
+      }
+    },
+    "versionFirst": "4.6.2",
+    "uniqCompNum": 2,
+    "versionPublish": "4.6.2",
+    "path": "@PROJECT_PATH@",
+    "screenshot": "screenshot.png"
+  },
+  "pages": {
+    "index.html": {
+      "settings": {
+        "main": true,
+        "title": "Home",
+        "meta_descr": "",
+        "header_custom": "",
+        "footer_custom": "",
+        "html_before": ""
+      },
+      "components": [
+        {
+          "_customTemplate": true,
+          "_afterNavbarItem": false,
+          "_customHTML": "\n<style>\ntable,th,td {\n  border : 1px solid black;\n  border-collapse: collapse;\n}\nth,td {\n  padding: 5px;\n}\n</style>\n<button type=\"button\" onclick=\"loadXMLDoc()\">Get my Sam CD collection</button>\n<br><br>\n<table id=\"demo\"></table>\n\n{JS_CODE_0}",
+          "_customCSS": "/* Type valid CSS here */\n.my-image {\n  width: 100%;\n}",
+          "alias": "code-editor",
+          "_tags": [
+            "Extension"
+          ],
+          "_name": "pro.custom-html",
+          "_anchor": "custom-html-0",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": [
+            "<script>\nfunction loadXMLDoc() {\n  var xmlhttp = new XMLHttpRequest();\n  xmlhttp.onreadystatechange = function() {\n    if (this.readyState == 4 && this.status == 200) {\n      myFunction(this);\n    }\n  };\n  xmlhttp.open(\"GET\", \"cd_catalog.xml\", true);\n  xmlhttp.send();\n}\nfunction myFunction(xml) {\n  var i;\n  var xmlDoc = xml.responseXML;\n  var table=\"<tr><th>Artist</th><th>Title</th></tr>\";\n  var x = xmlDoc.getElementsByTagName(\"CD\");\n  for (i = 0; i <x.length; i++) { \n    table += \"<tr><td>\" +\n    x[i].getElementsByTagName(\"ARTIST\")[0].childNodes[0].nodeValue +\n    \"</td><td>\" +\n    x[i].getElementsByTagName(\"TITLE\")[0].childNodes[0].nodeValue +\n    \"</td></tr>\";\n  }\n  document.getElementById(\"demo\").innerHTML = table;\n}\n</script>"
+          ]
+        }
+      ]
+    }
+  }
+}
