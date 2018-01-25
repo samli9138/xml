@@ -58,7 +58,7 @@
           "_anchor": "custom-html-0",
           "_PHPplaceholders": [],
           "_JSplaceholders": [
-            "<script>\nfunction loadXMLDoc() {\n  var xmlhttp = new XMLHttpRequest();\n  xmlhttp.onreadystatechange = function() {\n    if (this.readyState == 4 && this.status == 200) {\n      myFunction(this);\n    }\n  };\n  xmlhttp.open(\"GET\", \"cd_catalog.xml\", true);\n  xmlhttp.send();\n}\nfunction myFunction(xml) {\n  var i;\n  var xmlDoc = xml.responseXML;\n  var table=\"<tr><th>Artist</th><th>Title</th></tr>\";\n  var x = xmlDoc.getElementsByTagName(\"CD\");\n  for (i = 0; i <x.length; i++) { \n    table += \"<tr><td>\" +\n    x[i].getElementsByTagName(\"ARTIST\")[0].childNodes[0].nodeValue +\n    \"</td><td>\" +\n    x[i].getElementsByTagName(\"TITLE\")[0].childNodes[0].nodeValue +\n    \"</td></tr>\";\n  }\n  document.getElementById(\"demo\").innerHTML = table;\n}\n</script>"
+            "<script>\nfunction loadXMLDoc() {\n  var xmlhttp = new XMLHttpRequest();\n  xmlhttp.onreadystatechange = function() {\n    if (this.readyState == 4 && this.status == 200) {\n      myFunction(this);\n    }\n  };\n  xmlhttp.open(\"GET\", \"file:///D:/My%20Website/Mobirise/XML/cd_catalog.xml\", true);\n  xmlhttp.send();\n}\nfunction myFunction(xml) {\n  var i;\n  var xmlDoc = xml.responseXML;\n  var table=\"<tr><th>Artist</th><th>Title</th></tr>\";\n  var x = xmlDoc.getElementsByTagName(\"CD\");\n  for (i = 0; i <x.length; i++) { \n    table += \"<tr><td>\" +\n    x[i].getElementsByTagName(\"ARTIST\")[0].childNodes[0].nodeValue +\n    \"</td><td>\" +\n    x[i].getElementsByTagName(\"TITLE\")[0].childNodes[0].nodeValue +\n    \"</td></tr>\";\n  }\n  document.getElementById(\"demo\").innerHTML = table;\n}\n</script>"
           ]
         }
       ]
